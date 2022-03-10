@@ -11,20 +11,30 @@ function Register  ()  {
 
   const { name, email, password, password2}= formData
 
-  const onChange=()=>{}
+  const onChange=(e)=>{
+    setFormData((prevState)=>({
+      ...prevState,
+      [e.target.name] : e.target.value,
+    }))
+  }
 
-  return
+  const onSubmit=(e)=>{
+    e.preventDefault()
+  }
+
+  return (
   <>
     <section className='heading'>
       <h1>
         <FaUser/> Register
       </h1>
       <p>
-        pleas create account
+        please create account
       </p>
       </section>
+      
       <section className='form'>
-        <form>
+        <form onSubmit={onSubmit}>
           <div className="form-group">
           <input 
           type='text' 
@@ -39,7 +49,7 @@ function Register  ()  {
 
           <div className="form-group">
           <input 
-          type='emailt' 
+          type='email' 
           className='form-control' 
           id='email'
           name='email' 
@@ -81,6 +91,7 @@ function Register  ()  {
         </form>
         </section>
         </>
+  )
 }
 
 export default Register
