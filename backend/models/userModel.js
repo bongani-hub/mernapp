@@ -15,7 +15,8 @@ const userSchema = mongoose.Schema({
         required: [true , 'Please add password'],
     },
     
-},{
+},
+{
     timestamps: true
 })
 module.exports= mongoose.model('User',userSchema)
